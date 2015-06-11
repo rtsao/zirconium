@@ -1,0 +1,25 @@
+{
+  "name": "zirconium",
+  "version": "0.1.0",
+  "description": "A picoframework for Web Components",
+  "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
+  "repository": "git@github.com:rtsao/zirconium.git",
+  "main": "index.js",
+  "homepage": "https://github.com/rtsao/zirconium",
+  "dependencies": {
+    "global": "^4.3.0",
+    "map-obj": "^1.0.1",
+    "object-assign": "^3.0.0"
+  },
+  "devDependencies": {
+    "document-register-element": "^0.4.1",
+    "run-browser": "^2.0.2",
+    "tap-dot": "^1.0.0",
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "test": "run-browser test/polyfilled.js -b | tap-dot",
+    "test-browser": "run-browser test/index.js"
+  },
+  "license": "MIT"
+}
