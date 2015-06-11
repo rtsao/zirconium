@@ -12,14 +12,17 @@
     "object-assign": "^3.0.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.2",
     "document-register-element": "^0.4.1",
     "run-browser": "^2.0.2",
-    "tap-dot": "^1.0.0",
+    "tap-spec": "^4.0.0",
     "tape": "^4.0.0"
   },
   "scripts": {
-    "test": "run-browser test/polyfilled.js -b | tap-dot",
-    "test-browser": "run-browser test/index.js"
+    "test": "run-browser test/polyfilled.js -b --report lcov | tap-spec",
+    "test-browser": "run-browser test/index.js --report lcov",
+    "travis-test": "npm run test && ((cat coverage/lcov.info | coveralls) || exit 0)",
+    "view-cover": "open coverage/lcov-report/index.html"
   },
   "license": "MIT"
 }
