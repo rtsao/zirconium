@@ -2,6 +2,7 @@
 # zirconium
 
 [![build status][travis]][travis-uri]
+[![coverage status][coveralls]][coveralls-uri]
 
 A picoframework for Web Components
 
@@ -42,3 +43,6 @@ Your markup:
 
 [travis]: https://travis-ci.org/rtsao/zirconium.svg
 [travis-uri]: https://travis-ci.org/rtsao/zirconium
+
+[coveralls]: https://coveralls.io/repos/rtsao/zirconium/badge.svg
+[coveralls-uri]: https://coveralls.io/r/rtsao/zirconium
