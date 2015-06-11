@@ -1,5 +1,8 @@
 
 # zirconium
+
+[![build status][travis]][travis-uri]
+
 A picoframework for Web Components
 
 # usage
@@ -36,3 +39,6 @@ Your markup:
   </body>
 </html>
 ```
+
+[travis]: https://travis-ci.org/rtsao/zirconium.svg
+[travis-uri]: https://travis-ci.org/rtsao/zirconium
