@@ -41,8 +41,8 @@ Your markup:
 </html>
 ```
 
-[travis]: https://travis-ci.org/rtsao/zirconium.svg
+[travis]: https://travis-ci.org/rtsao/zirconium.svg?branch=master
 [travis-uri]: https://travis-ci.org/rtsao/zirconium
 
-[coveralls]: https://coveralls.io/repos/rtsao/zirconium/badge.svg
+[coveralls]: https://coveralls.io/repos/rtsao/zirconium/badge.svg?branch=master
 [coveralls-uri]: https://coveralls.io/r/rtsao/zirconium
