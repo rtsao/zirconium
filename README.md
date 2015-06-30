@@ -3,6 +3,7 @@
 
 [![build status][travis]][travis-uri]
 [![coverage status][coveralls]][coveralls-uri]
+[![coverage status][deps]][deps-uri]
 
 A picoframework for Web Components
 
@@ -46,3 +47,6 @@ Your markup:
 
 [coveralls]: https://coveralls.io/repos/rtsao/zirconium/badge.svg?branch=master
 [coveralls-uri]: https://coveralls.io/r/rtsao/zirconium
+
+[deps]: https://david-dm.org/rtsao/zirconium.svg
+[deps-uri]: https://david-dm.org/rtsao/zirconium
