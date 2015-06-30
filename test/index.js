@@ -61,3 +61,34 @@ test('calls elementDidUnmount', function (assert) {
   document.body.appendChild(widget);
   document.body.removeChild(widget);
 });
+
+test('passes children', function (assert) {
+  var MyWidget = Zr({
+    name: 'my-widget-6',
+    elementDidInit: function(children) {
+      assert.equal(children.length, 2, 'both children passed');
+      assert.end();
+    }
+  });
+
+  document.body.innerHTML = '<my-widget-6><p></p><span></span></my-widget-6>';
+});
+
+test('renders returned markup', function (assert) {
+  var div = document.createElement('div');
+  div.id = 'foo';
+
+  var MyWidget = Zr({
+    name: 'my-widget-7',
+    elementDidInit: function() {
+      return div;
+    }
+  });
+
+  var widget = document.createElement('my-widget-7');
+  document.body.appendChild(widget);
+  var foo = document.getElementById('foo');
+  assert.equal(foo, div, 'markup rendered');
+  document.body.removeChild(widget);
+  assert.end();
+});
