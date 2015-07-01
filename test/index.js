@@ -5,6 +5,13 @@ var test = require('tape');
 
 var Zr = require('../')
 
+test('name is required', function (assert) {
+  assert.throws(function() {
+    return Zr({});
+  }, /`name` is required/, 'error thrown');
+  assert.end();
+});
+
 test('constructs custom element with new operator', function (assert) {
   var MyWidget = Zr({
     name: 'my-widget-1',
@@ -63,6 +70,12 @@ test('calls elementDidUnmount', function (assert) {
 });
 
 test('passes children', function (assert) {
+
+  var widget = document.createElement('my-widget-6');
+  widget.appendChild(document.createElement('p'));
+  widget.appendChild(document.createElement('span'));
+  document.body.appendChild(widget);
+
   var MyWidget = Zr({
     name: 'my-widget-6',
     elementDidInit: function(children) {
@@ -70,13 +83,17 @@ test('passes children', function (assert) {
       assert.end();
     }
   });
-
-  document.body.innerHTML = '<my-widget-6><p></p><span></span></my-widget-6>';
 });
 
 test('renders returned markup', function (assert) {
   var div = document.createElement('div');
   div.id = 'foo';
+
+  var widget = document.createElement('my-widget-7');
+  var p = document.createElement('p');
+  p.id = 'bar';
+  widget.appendChild(p);
+  document.body.appendChild(widget);
 
   var MyWidget = Zr({
     name: 'my-widget-7',
@@ -85,10 +102,24 @@ test('renders returned markup', function (assert) {
     }
   });
 
-  var widget = document.createElement('my-widget-7');
-  document.body.appendChild(widget);
   var foo = document.getElementById('foo');
-  assert.equal(foo, div, 'markup rendered');
-  document.body.removeChild(widget);
+  assert.notOk(document.getElementById('bar'), 'p not rendered');
+  assert.equal(foo, div, 'returned markup rendered');
   assert.end();
+});
+
+test('extends native element', function (assert) {
+  var MyWidget = Zr({
+    name: 'my-widget-8',
+    nativeElement: {
+      tagName: 'div',
+      prototype: HTMLDivElement.prototype
+    },
+    elementDidInit: function() {
+      assert.ok(true, 'elementDidInit called');
+      assert.end();
+    }
+  });
+
+  var widget = document.createElement('div', 'my-widget-8');
 });
