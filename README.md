@@ -7,6 +7,10 @@
 
 A picoframework for Web Components
 
+* Eliminates unnecessary ceremony when defining custom elements
+* Provides a more functional interface versus vanilla custom element syntax
+* Tiny (<700 bytes gzipped)
+
 # usage
 Your javascript:
 
