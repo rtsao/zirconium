@@ -9,7 +9,7 @@
   "dependencies": {
     "global": "^4.3.0",
     "map-obj": "^1.0.1",
-    "object-assign": "^3.0.0"
+    "object-assign": "^4.0.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
